@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head") %>
+  </head>
+  <body>
+    <%- include("../partials/navbar2") %>
+    <div class="container">  
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <h1 style="text-align: center;"><em>Details About a Blog</em></h1>
+          <br>
+         <h2 style="text-align: center;"><strong><em>Title: </em></strong><%= foundBlog.title %></h2>
+         <img src="<%= foundBlog.img %>" alt="" style="width: 100%; height: 400x; padding-left: 20%; padding-right: 20%;">
+        <p><strong><em>Author: </em></strong><%= foundBlog.Author %></p>
+        <p><strong><em>Category: </em></strong><%= foundBlog.category %></p>
+        <p><strong><em>Description: </em></strong><%= foundBlog.Description %></p>
+        <p><strong><em>Date of Creation: </em></strong><%= foundBlog.CreatedDate%></p>
+
+        <a href="/update?id=<%= foundBlog._id %>"><button class="btn btn-info">Edit</button></a>
+        <br>
+        <br>
+        <a href="/blogs"><button class="btn btn-dark">Go Back</button></a>
+        <br>
+        <br>
+        <a href="/delete/<%= foundBlog._id %>"><button class="btn btn-danger">Delete</button></a>
+        <hr/> 
+      </div>
+  </div>       
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>

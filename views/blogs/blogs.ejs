@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head") %>
+  </head>
+  <body>
+    <%- include("../partials/navbar") %>
+    
+    <div class="container">  
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h1><em>Top Travelling Blogs</em></h1>
+
+            <% for(let blog of blogs){ %>
+            <div>
+              <h2 style="text-align: center;"><strong><em>Title: </em></strong><%= blog.title %></h2>
+              <img src="<%= blog.img %>" alt="" style="width: 100%; height: 400x; padding-left: 20%; padding-right: 20%;">
+              <p style="text-align: justified;"><strong><em>Author: </em></strong><%= blog.Author %></p>
+              <p style="text-align: justified;"><strong><em>Category: </em></strong><%= blog.category%></p>
+             
+              <p><strong><em>Date of Creation: </em></strong><%= blog.CreatedDate%></p>
+              
+              
+              <a href="/blogs/<%= blog._id %>"><button class="btn btn-success">Show Details</button></a>
+              <hr />
+            </div>
+            <% } %>
+            <a href="/new"><button class="btn btn-dark">Create New Blog</button></a>
+          </div>
+        </div>
+    </div>       
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>

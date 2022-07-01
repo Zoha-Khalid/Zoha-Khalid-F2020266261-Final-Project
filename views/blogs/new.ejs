@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head") %>
+  </head>
+  <body>
+    <%- include("../partials/navbar2") %>
+
+    <div class="container">  
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div style="text-align:center">
+            <h2><em>Add New Blog Here</em></h2>
+          </div>
+        </div>  
+        <form action="/home" method="post">
+          Title:  
+            <div class="mb-3">
+              <input type="text" placeholder="Title" name="title" />
+            </div>
+    
+          Image Url:
+            <div class="mb-3">
+              <input type="text" placeholder="Image URL" name="img" />
+            </div>
+          
+          Author:  
+            <div class="mb-3">
+              <input type="text" placeholder="Author" name="Author" />
+            </div>
+    
+          Creation-Date:
+            <div class="mb-3">
+                <input type="date" placeholder="Enter Date" name="CreatedDate"/>
+            </div>
+    
+          Category:
+            <div class="mb-3">
+              <input type="text" placeholder="category" name="category" />
+            </div>
+    
+          Description:
+            <div class="mb-3">
+              <textarea
+                name="Description"
+                cols="30"
+                rows="3"
+                placeholder="Description"
+              ></textarea>
+            </div>        
+            <button class="btn btn-success">Submit</button>
+        </form> 
+      </div>
+   </div>       
+  </body>
+</html>

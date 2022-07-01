@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("partials/head") %>
+  <body>
+    <%- include("partials/navbar") %>
+     
+    <div class="container">  
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div style="text-align:center">
+              <h1><em><strong>Welcome to the world of Traveling Blogs</strong></em></h1>
+              <p><em>"See the world. It's more fantastic than any dream made or paid for in factories. Ask for no guarantees, ask for no security."</em></p>
+              
+              <p style="text-align: center;"> <h3><strong>Introduction:</strong></h3>
+                <em>Travelling is an amazing way to learn a lot of things in life. A lot of people around the world travel every year to many places. Moreover, it is important to travel to humans. 
+                Some travel to learn more while some travel to take a break from their life. No matter the reason, travelling opens 
+                a big door for us to explore the world beyond our imagination and indulge in many things.There are numerous benefits to travelling if we think about it. The first one being, we get to meet new people. When you meet new people, you get the opportunity to 
+                make new friends. It may be a fellow traveller or the local you asked for directions.
+                Moreover, new age technology has made it easier to keep in touch with them. Thus, it offers not only a great way to
+                understand human nature but also explore new places with those friends to make your trip easy.
+                All in all, it is no less than a blessing to be able to travel. Many people are not privileged enough to do that. Those who do get the chance, it brings excitement in their lives and teaches them new things.
+                No matter how a travelling experience may go, whether good or bad, it will definitely help you learn.
+               </em>
+              </p>
+            </div>
+            <br>
+            <h3 style="text-align:center;"><em><strong>Most Recent Blogs</strong></em></h3>
+            <br>
+            <div class="display">
+              <% for(var i = Blogs.length-1; i>( Blogs.length-6) ; i--) {%>
+               
+                <div class="title" style="text-align: center;">
+                  <h2><strong><em>Title: </em></strong>
+                    <%= Blogs[i].title %>
+                  </h2>
+
+                  <img src="<%= Blogs[i].img %>" alt="" style="width: 100%; height: 400x; padding-left: 20%; padding-right: 20%;">
+                  <br>
+                  <br>
+
+                  <div class="A_data" style="text-align:justify;">
+                    <h2><strong><em>Author: </em></strong>
+                    <%= Blogs[i].Author %>
+                  </div>
+
+                  <div class="C_data" style="text-align: justify;">
+                    <h2><strong><em>Category: </em></strong>
+                    <%= Blogs[i].category %>
+                  </div>
+                  
+                  <div class="D_data" style="text-align: justify;">
+                    <h2><strong><em>Creation Date: </em></strong>
+                    <%= Blogs[i].CreatedDate %>
+                  </div> 
+                  <a href="/blogs/<%= Blogs[i]._id %>"><button class="btn btn-success">Show Details</button></a>
+                </div>   
+                <hr>
+              <% }%>
+            </div>
+           
+          </div>  
+        </div>
+    </div>       
+    <%- include("partials/footer") %>
+
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>

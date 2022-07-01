@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head") %>
+  </head>
+  <body>
+    <%- include("../partials/navbar2") %>
+
+    <div class="container">
+      <h1>Add New Recepie Here</h1>
+
+      <form
+        action="/update/<%= foundBlog._id %>"
+        method="post"
+      >
+      Title:
+        <div class="mb-3">
+          <input
+            type="text"
+            placeholder="Title"
+            name="title"
+            value="<%= foundBlog.title %> "
+          />
+        </div>
+
+      Image URL:  
+        <div class="mb-3">
+          <input
+            type="text"
+            placeholder="Image URL"
+            name="img"
+            value="<%= foundBlog.img %> "
+          />
+        </div>
+
+      Author:  
+        <div class="mb-3">
+          <input
+            type="text"
+            placeholder="Author"
+            name="Author"
+            value="<%= foundBlog.Author %> "
+          />
+        </div>
+
+      Creation-Date:
+        <div class="mb-3">
+            <input type="date" placeholder="Enter Date" name="CreatedDate"
+            value="<%=foundBlog.CreatedDate %>"/>
+        </div>
+        
+      Category:  
+        <div class="mb-3">
+          <input
+            type="text"
+            placeholder="Category"
+            name="category"
+            value="<%= foundBlog.category %> "
+          />
+        </div>
+
+      Description:  
+        <div class="mb-3">
+          <textarea name="Description" cols="30" rows="3" placeholder="Description">
+             <%= foundBlog.Description %> </textarea
+          >
+        </div>  
+        
+        <button class="btn btn-success">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

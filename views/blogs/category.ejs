@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head") %>
+  <body>
+    <%- include("../partials/navbar") %>
+     
+    <div class="container">  
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div style="text-align:center">
+              <h1><em><strong>Welcome to Category</strong></em></h1>
+            </div>
+            <br>
+            <div class="display">
+              <% for(var i =0; i< Blogs.length ; i++) {%>
+               
+                <div class="title" style="text-align: center;">
+                  <h2><strong><em>Title: </em></strong>
+                    <%= Blogs[i].title %>
+                  </h2>
+
+                  <img src="<%= Blogs[i].img %>" alt="" style="width: 100%; height: 400x; padding-left: 20%; padding-right: 20%;">
+                  <br>
+                  <br>
+
+                  <div class="A_data" style="text-align:justify;">
+                    <h2><strong><em>Author: </em></strong>
+                    <%= Blogs[i].Author %>
+                  </div>
+
+                  <div class="C_data" style="text-align: justify;">
+                    <h2><strong><em>Category: </em></strong>
+                    <%= Blogs[i].category %>
+                  </div>
+
+                  <div class="D_data" style="text-align: justify;">
+                    <h2><strong><em>Creation Date: </em></strong>
+                    <%= Blogs[i].CreatedDate %>
+                  </div> 
+                  
+                  <a href="/blogs/<%= Blogs[i]._id %>"><button class="btn btn-success">Show Details</button></a>
+                </div>   
+                <hr>
+              <% }%>
+            </div>
+           
+          </div>  
+        </div>
+    </div>       
+    <%- include("../partials/footer") %>
+
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
